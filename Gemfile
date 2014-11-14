@@ -4,7 +4,13 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :development do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -26,8 +32,19 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-#Gem for user authentication 
+
+# For user authentication
 gem 'devise'
+
+gem 'bundler'
+
+
+
+
+#Dependencies for Bootstrap
+#gem "therubyracer"
+#gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+#gem "twitter-bootstrap-rails", '~> 3.2.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

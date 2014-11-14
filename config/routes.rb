@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
   resources :events
+  resources :dashboard
 
   #root path 
+
   root to: redirect('/events')
 
-  devise_for :users
+  devise_for :users, :controllers => { :devise_redirect => "devise_redirect" }
+
+  #use for redirect to specific path after sign in for Device
+  get '/dashboard' => "dashboard#index", as: :user_root
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
