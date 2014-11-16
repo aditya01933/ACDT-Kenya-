@@ -19,10 +19,12 @@
   <%= contact.tel %>
 </p>
 
-<%= link_to 'Edit', edit_contact_path(contact) %> 
+<%= link_to 'Edit', edit_contact_path(contact) %> |
+<%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %>
 
 
     <% end %>
- 
+    </br>
+<%= link_to 'New', new_contact_path %>
 
 <br>
