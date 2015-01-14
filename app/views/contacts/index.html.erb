@@ -1,0 +1,30 @@
+<h1>Contat Us</h1>
+
+
+    <% @contacts.each do |contact| %>
+      <p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= contact.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= contact.email %>
+</p>
+
+<p>
+  <strong>Tel:</strong>
+  <%= contact.tel %>
+</p>
+
+<%= link_to 'Edit', edit_contact_path(contact) %> |
+<%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
+    <% end %>
+    </br>
+<%= link_to 'New', new_contact_path %>
+
+<br>
